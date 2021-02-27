@@ -14,5 +14,10 @@ namespace Business.Constants
         public static string CarsListed = "Araçlar Listelendi";
         public static string CarsDetailed = "Araç Detayları Listelendi";
         public static string SuccessMessage = "İşlem Başarılı";
+        public static string CarCountOfCategoryError = "Bir kategoride en fazla 10 araba olabilir";
+        public static string CarDescriptionAlreadyExists = "Böyle bir açıklama zaten mevcut";
+        public static string BrandLimitExceded = "Marka limiti aşıldığı için yeni ürün eklenemiyor";
+        public static string ImageLimit = "Maksimum fotoğraf sayısına ulaşıldı";
+        public static string ImageAdded = "Resim eklendi";
     }
 }
