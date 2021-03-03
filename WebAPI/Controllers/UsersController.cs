@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,9 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        IUsersService _usersService;
+        IUserService _usersService;
 
-        public UsersController(IUsersService usersService)
+        public UsersController(IUserService usersService)
         {
             _usersService = usersService;
         }
@@ -32,7 +33,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete")]
-        public IActionResult Delete(Users user)
+        public IActionResult Delete(User user)
         {
             var result = _usersService.DeleteUser(user);
             if (result.Success)
@@ -43,7 +44,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Users user)
+        public IActionResult Add(User user)
         {
             var result = _usersService.AddUser(user);
             if (result.Success)

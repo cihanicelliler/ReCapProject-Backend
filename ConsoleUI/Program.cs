@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -67,13 +68,12 @@ namespace ConsoleUI
 
         private static void UsersTest()
         {
-            UsersManager usersManager = new UsersManager(new EfUsersDal());
-            Users user = new Users
+            UserManager usersManager = new UserManager(new EfUserDal());
+            User user = new User
             {
                 FirstName = "Taylan Deniz",
                 LastName = "Arslan",
                 Email = "tdarslan@gmail.com",
-                Password = "987654"
             };
             var result = usersManager.GetAll();
             if (result.Success)
