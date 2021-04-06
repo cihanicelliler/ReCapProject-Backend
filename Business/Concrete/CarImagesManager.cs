@@ -67,7 +67,8 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarImagesValidator))]
         public IDataResult<List<CarImages>> GetImagesByCarId(int id)
         {
-            return new SuccessDataResult<List<CarImages>>(CheckIfCarImageNull(id));
+            IResult result = BusinessRules.Run(CheckIfCarImageNull(id));
+            return new SuccessDataResult<List<CarImages>>(_carImagesDal.GetAll(c => c.CarId == id));
         }
 
         [ValidationAspect(typeof(CarImagesValidator))]
@@ -89,15 +90,16 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        private List<CarImages> CheckIfCarImageNull(int id)
+        private IResult CheckIfCarImageNull(int id)
         {
             string path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName + @"\Images\carImages\default.png");
             var result = _carImagesDal.GetAll(c => c.CarId == id).Any();
             if (!result)
             {
-                return new List<CarImages> { new CarImages { CarId = id, ImagePath = path, Date = DateTime.Now } };
+                new List<CarImages> { new CarImages { CarId = id, ImagePath = path, Date = DateTime.Now } };
+                return new SuccessResult();
             }
-            return _carImagesDal.GetAll(c => c.CarId == id);
+            return new SuccessResult();
         }
         private IResult CarImageDelete(CarImages carImages)
         {

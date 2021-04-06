@@ -52,7 +52,12 @@ namespace DataAccess.Concrete.InMemory
             return _cars.Where(c => c.Id == carId).ToList();
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public List<CarDetailDto2> GetCarDetailDtos(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto2> GetCarDetailDtos2(Expression<Func<Car, bool>> filter = null)
         {
             throw new NotImplementedException();
         }

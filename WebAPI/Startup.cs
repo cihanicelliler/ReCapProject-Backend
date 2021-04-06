@@ -44,6 +44,7 @@ namespace WebAPI
             //services.AddSingleton<IUsersDal, EfUsersDal>();
             //services.AddSingleton<ICustomersService, CustomersManager>();
             //services.AddSingleton<ICustomersDal, EfCustomersDal>();
+            services.AddCors();
             
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -74,7 +75,11 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyOrigin());
+
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 

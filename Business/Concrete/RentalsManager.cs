@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,6 +35,16 @@ namespace Business.Concrete
         {
             
             return new SuccessDataResult<List<Rentals>>(_rentalsDal.GetAll(),Messages.SuccessMessage);
+        }
+
+        public IDataResult<List<Rentals>> GetRentById(int id)
+        {
+            return new SuccessDataResult<List<Rentals>>(_rentalsDal.GetAll(r => r.CarId == id),Messages.SuccessMessage);
+        }
+
+        public IDataResult<List<RentDetailDto>> GetRentDetails()
+        {
+            return new SuccessDataResult<List<RentDetailDto>>(_rentalsDal.GetRentDetailDtos(), Messages.SuccessMessage);
         }
 
         public IResult UpdateRental(Rentals rental)

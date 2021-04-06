@@ -72,21 +72,12 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 13)
-            {
-                return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
-            }
+            //if (DateTime.Now.Hour == 13)
+            //{
+            //    return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
+            //}
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.CarsListed);
-        }
-
-        public IDataResult<List<CarDetailDto>> GetCarDetails()
-        {
-            if (DateTime.Now.Hour == 17)
-            {
-                return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarsDetailed);
-        }
 
         public IDataResult<List<Car>> GetCarsByBrandId(int id)
         {
@@ -99,7 +90,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
-        [PerformanceAspect(5)]
+        //[PerformanceAspect(5)]
         public IDataResult<Car> GetById(int carId)
         {
             return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == carId), Messages.CarsListed);
@@ -137,6 +128,20 @@ namespace Business.Concrete
         public IResult AddTransactionalTest(Car car)
         {
             throw new NotImplementedException();
+        }
+
+        public IDataResult<List<CarDetailDto2>> GetCarDetails(int id)
+        {
+            return new SuccessDataResult<List<CarDetailDto2>>(_carDal.GetCarDetailDtos2(c => c.Id == id), Messages.CarsDetailed);
+        }
+
+        public IDataResult<List<CarDetailDto2>> GetCarDetails2()
+        {
+            //if (DateTime.Now.Hour == 17)
+            //{
+            //    return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
+            //}
+            return new SuccessDataResult<List<CarDetailDto2>>(_carDal.GetCarDetailDtos2(), Messages.CarsDetailed);
         }
     }
 }

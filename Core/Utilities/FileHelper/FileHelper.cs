@@ -22,7 +22,11 @@ namespace Core.Utilities.FileHelper
 
             File.Move(sourcepath, result);
 
-            return result;
+            var imgPath = result;
+
+            imgPath = imgPath.Replace("C:\\Users\\icell\\source\\repos\\ReCapProject\\WebAPI\\wwwroot\\uploads\\", "");
+
+            return imgPath;
         }
 
         public static string Update(string sourcePath, IFormFile file)
@@ -51,7 +55,7 @@ namespace Core.Utilities.FileHelper
             FileInfo ff = new FileInfo(file.FileName);
             string fileExtension = ff.Extension;
 
-            string path = Environment.CurrentDirectory + @"\Images\carImages";
+            string path = Environment.CurrentDirectory + @"\wwwroot\uploads";
 
             var creatingUniqueFilename = Guid.NewGuid().ToString()
                + "_" + DateTime.Now.Month + "_"
