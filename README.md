@@ -84,9 +84,9 @@ Altı alt klasörden oluşur.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [BrandManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/BrandManager.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [CarManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/CarManager.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [ColorManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/ColorManager.cs)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [CustomerManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/CustomersManager.cs)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [ImageManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/CarImagesManager.cs)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [RentalManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/RentalsManager.cs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [CustomersManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/CustomersManager.cs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [CarImagesManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/CarImagesManager.cs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [RentalsManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/RentalsManager.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [UserManager](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/UserManager.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [Payment](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Concrete/PaymentManager.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`BusinessAspect`<br>
