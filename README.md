@@ -13,7 +13,7 @@ Projede kullanılacak veritabanı nesnelerini tutmak için oluşturulan katmand�
 &nbsp;&nbsp;2.`Concrete` klasörü somut nesneleri tutmak için <br>
 &nbsp;&nbsp;3.`DTOs` klasörü nesnelere farklı özellikler vermek ve veritabanındaki tabloları birleştirmek için kullanılmıştır.
 <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstarct`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstract`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: ~~IEntity~~<br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder: `Concrete`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [Brand](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Entities/Concrete/Brand.cs)<br>
@@ -36,7 +36,7 @@ Veritabanı CRUD işlemleri gerçekleştirmek için kurulan veri erişim katman�
 &nbsp;&nbsp;1.`Abstract` klasörü soyut nesneleri tutmak için,<br>
 &nbsp;&nbsp;2.`Concrete` klasörü somut nesneleri tutmak için. <br>
 <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstarct`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstract`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [IBrandDal](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/DataAccess/Abstract/IBrandDal.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [ICarDal](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/DataAccess/Abstract/ICarDal.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [IColorDal](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/DataAccess/Abstract/IColorDal.cs)<br>
