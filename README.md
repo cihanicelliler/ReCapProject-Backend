@@ -1,4 +1,4 @@
-# ReCarProject - Araç Kiralama Sistemi
+# ReCapProject - Araç Kiralama Sistemi
 ![Araç Kiralama](https://image.freepik.com/free-vector/businessman-with-smartphone-rents-car-street-via-carsharing-service-carsharing-service-short-periods-rent-best-taxi-alternative-concept-bright-vibrant-violet-isolated-illustration_335657-903.jpg)
 <br><br>
  Araç Kiralama Sistemi, (Nitelikli) Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan bir projedir.
