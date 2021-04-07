@@ -33,7 +33,7 @@ namespace Business.Concrete
         }
 
 
-        [SecuredOperation("car.add,admin")]
+        //[SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult AddCar(Car car)
@@ -141,7 +141,7 @@ namespace Business.Concrete
             //{
             //    return new ErrorDataResult<List<CarDetailDto>>(Messages.MaintenanceTime);
             //}
-            return new SuccessDataResult<List<CarDetailDto2>>(_carDal.GetCarDetailDtos2(), Messages.CarsDetailed);
+            return new SuccessDataResult<List<CarDetailDto2>>(_carDal.GetCarDetailDtos2(), Messages.SuccessMessage);
         }
     }
 }
