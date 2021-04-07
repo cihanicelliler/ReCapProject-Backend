@@ -59,5 +59,13 @@ namespace Core.DataAccess.EntityFramework
                 context.SaveChanges();
             }
         }
+
+        public bool Exists(Expression<Func<TEntity, bool>> filter)
+        {
+            using (TContext contex = new TContext())
+            {
+                return contex.Set<TEntity>().Any<TEntity>(filter);
+            }
+        }
     }
 }

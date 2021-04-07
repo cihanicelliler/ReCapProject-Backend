@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
@@ -39,8 +41,21 @@ namespace Business.Concrete
         }
         public IResult UpdateColor(Color color)
         {
+            IResult result = BusinessRules.Run(ColorExists(color.ColorId));
+            if (result != null)
+            {
+                return result;
+            }
             _colorDal.Update(color);
             return new SuccessResult();
+        }
+        private IResult ColorExists(int id)
+        {
+            if (_colorDal.Exists(c => c.ColorId == id))
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult(Messages.ColorNotFound);
         }
     }
 }

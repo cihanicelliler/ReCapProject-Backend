@@ -65,6 +65,11 @@ namespace Business.Concrete
         [CacheRemoveAspect("ICarService.Get")]
         public IResult UpdateCar(Car car)
         {
+            IResult result = BusinessRules.Run(CarExists(car.Id));
+            if (result!=null)
+            {
+                return result;
+            }
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
@@ -91,9 +96,9 @@ namespace Business.Concrete
 
         [CacheAspect]
         //[PerformanceAspect(5)]
-        public IDataResult<Car> GetById(int carId)
+        public IDataResult<List<Car>> GetById(int carId)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == carId), Messages.CarsListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.Id == carId), Messages.CarsListed);
         }
 
         private IResult CheckIfCarCountOfCategoryCorrect(int brandId)
@@ -122,6 +127,15 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.BrandLimitExceded);
             }
             return new SuccessResult();
+        }
+
+        private IResult CarExists(int id)
+        {
+            if (_carDal.Exists(c => c.Id == id))
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult(Messages.CarNotFound);
         }
 
         [TransactionScopeAspect]

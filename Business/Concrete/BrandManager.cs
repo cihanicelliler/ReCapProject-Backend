@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
@@ -38,8 +40,22 @@ namespace Business.Concrete
         }
         public IResult UpdateBrand(Brand brand)
         {
+            IResult result = BusinessRules.Run(BrandExists(brand.BrandId));
+            if (result != null)
+            {
+                return result;
+            }
             _brandDal.Update(brand);
             return new SuccessResult();
+        }
+
+        private IResult BrandExists(int id)
+        {
+            if (_brandDal.Exists(b => b.BrandId == id))
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult(Messages.ColorNotFound);
         }
     }
 }
