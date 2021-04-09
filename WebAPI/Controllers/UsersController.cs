@@ -31,6 +31,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyemail")]
+        public IActionResult GetByEmail(String email)
+        {
+            var result = _usersService.GetByMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpDelete("delete")]
         public IActionResult Delete(User user)

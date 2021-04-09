@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCustomersDal : EfEntityRepositoryBase<Customers,CarDbContext>,ICustomersDal
+    public class EfCustomersDal : EfEntityRepositoryBase<Customers, CarDbContext>, ICustomersDal
     {
         public List<CustomerDetailDto> GetCustomerDetailDtos()
         {
@@ -21,7 +21,10 @@ namespace DataAccess.Concrete.EntityFramework
                              on c.UserId equals u.Id
                              select new CustomerDetailDto
                              {
-                                 Id=c.Id,CompanyName=c.CompanyName,FirstName=u.FirstName,LastName=u.LastName
+                                 Id = c.Id,
+                                 CompanyName = c.CompanyName,
+                                 FirstName = u.FirstName,
+                                 LastName = u.LastName
                              };
                 return result.ToList();
 

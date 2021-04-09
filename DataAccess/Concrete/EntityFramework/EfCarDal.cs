@@ -32,7 +32,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName = color.ColorName,
                                  DailyPrice = c.DailyPrice,
                                  Description = c.DescriptionCar,
-                                 ImagePath = img.ImagePath
+                                 ImagePath = img.ImagePath,
+                                 FindexPoint = c.FindexPoint
                              };
                 return result.ToList();
             }
