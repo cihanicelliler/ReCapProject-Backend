@@ -191,3 +191,18 @@ Yedi alt klasörden oluşmaktadır.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [RentalController](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/WebAPI/Controllers/RentalController.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [PaymentsController](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/WebAPI/Controllers/PaymentsController.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [UsersController](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/WebAPI/Controllers/UsersController.cs)<br>
+
+Zaman ayırdığınız için teşekkür ederim. Benimle aşağıdaki hesaplarımdan iletişime geçebilirsiniz. <br>
+<br>
+
+<a href="https://github.com/cihanicelliler" target="_blank">
+
+![alt text](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+</a>
+<a href="https://www.linkedin.com/in/cihan-içelliler/" target="_blank">
+
+![alt text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
+
+</a>
+
