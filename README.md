@@ -1,17 +1,17 @@
-# ReCapProject - Araç Kiralama Sistemi
+# ReCapProject - Car Rental System
 ![Araç Kiralama](https://image.freepik.com/free-vector/businessman-with-smartphone-rents-car-street-via-carsharing-service-carsharing-service-short-periods-rent-best-taxi-alternative-concept-bright-vibrant-violet-isolated-illustration_335657-903.jpg)
 <br><br>
- Araç Kiralama Sistemi, (Nitelikli) Yazılım Geliştirici Yetiştirme Kampı'nda yapılan çalışmaları kapsayan bir projedir.
+ The Car Rental System is a project that covers the work done in the (Qualified) Software Developer Training Camp.
  <br><br>
-Proje, back-end arayüzde sunucu tarafından gerçekleştirilen C# dilinde, katmanlı yazılım kurumsal mimari yapısı, SOLID yazılım prensipleri, Web API, EntityFrameWork yapısı ile geliştirilmiştir. JWT entegrasyonu; Transaction, Cache, Validation ve Performance aspectlerinin implementasyonları gerçekleştirilmiş olup Validation için FluentValidation desteği, IoC için Autofac desteği eklenmiştir.
+The project was developed in C # language, implemented by the server in the back-end interface, with layered software corporate architecture, SOLID software principles, Web API, EntityFrameWork structure. JWT integration; Implementations of Transaction, Cache, Validation and Performance aspects have been implemented, and support for FluentValidation for Validation and Autofac support for IoC has been added.
  <br><br>
 ## :card_index_dividers: Layers
 ### :file_folder: Entities Layer
-Projede kullanılacak veritabanı nesnelerini tutmak için oluşturulan katmandır.<br>
-Üç alt klasörden oluşmaktadır. <br>
-&nbsp;&nbsp;1.`Abstract` klasörü soyut nesneleri tutmak için (`Abstract` klasörü daha sonra geliştirilecek olan projeler içinde ortak kodlar içermesinden dolayı `Core` katmanına taşınmıştır.),<br>
-&nbsp;&nbsp;2.`Concrete` klasörü somut nesneleri tutmak için <br>
-&nbsp;&nbsp;3.`DTOs` klasörü nesnelere farklı özellikler vermek ve veritabanındaki tabloları birleştirmek için kullanılmıştır.
+It is the layer created to hold database objects to be used in the project.<br>
+It consists of three sub-folders. <br>
+&nbsp;&nbsp;1.The `Abstract` folder has been moved to the `Core` layer to keep the abstract objects (`Abstract` folder has been moved to the `Core` layer since it contains common codes in the projects that will be developed later.),<br>
+&nbsp;&nbsp;2.`Concrete` folder for holding concrete objects <br>
+&nbsp;&nbsp;3.The folder `DTOs` is used to give different properties to objects and to combine tables in the database.
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstract`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: ~~IEntity~~<br>
@@ -31,10 +31,10 @@ Projede kullanılacak veritabanı nesnelerini tutmak için oluşturulan katmand�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [CustomerDetailDto](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Entities/DTOs/CustomerDetailDto.cs)<br>
 
 ### :file_folder: DataAccess Layer
-Veritabanı CRUD işlemleri gerçekleştirmek için kurulan veri erişim katmanıdır.<br>
+Database is the data access layer established to perform CRUD operations.<br>
 İki alt klasörden oluşmaktadır.<br>
-&nbsp;&nbsp;1.`Abstract` klasörü soyut nesneleri tutmak için,<br>
-&nbsp;&nbsp;2.`Concrete` klasörü somut nesneleri tutmak için. <br>
+&nbsp;&nbsp;1.`Abstract` folder to hold abstract objects,<br>
+&nbsp;&nbsp;2.`Concrete` folder to hold concrete objects. <br>
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstract`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [IBrandDal](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/DataAccess/Abstract/IBrandDal.cs)<br>
@@ -60,14 +60,14 @@ Veritabanı CRUD işlemleri gerçekleştirmek için kurulan veri erişim katman�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [InMemoryCarDal](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/DataAccess/Concrete/InMemory/InMemoryCarDal.cs)<br>
 
 ### :file_folder: Business Layer
-DataAccess tarafından veratabanından projeye çekilen verileri alarak işleyen katmandır. Bir başka deyişle iş yüklerinin yazıldığı katmandır.
-Altı alt klasörden oluşur.<br>
-&nbsp;&nbsp;1.`Abstract` klasörü soyut nesneleri tutmak için,<br>
-&nbsp;&nbsp;2.`Concrete` klasörü somut nesneleri tutmak için,<br>
-&nbsp;&nbsp;3.`BusinessAspect` klasörü güvenlik operasyonlarının yönetimi için,<br>
-&nbsp;&nbsp;4.`Constants` klasörü kullanıcı verileri ile gerçekleştirilen işlem sonucunda bilgilendirme mesajlarının yönetimi için, <br>
-&nbsp;&nbsp;5.`DependecyResolvers` klasörü instance oluşturmak için,<br>
-&nbsp;&nbsp;6.`ValidationRules` klasörü doğrulama kurallarının yönetimi için oluşturulmuştur.<br>
+It is the layer that processes the data captured by DataAccess from the database to the project. In other words, it is the layer on which workloads are written.
+It consists of six subfolders.<br>
+&nbsp;&nbsp;1.`Abstract` folder to hold abstract objects,<br>
+&nbsp;&nbsp;2.`Concrete` folder to hold concrete objects.<br>
+&nbsp;&nbsp;3.`BusinessAspect` folder for management of security operations,<br>
+&nbsp;&nbsp;4.`Constants` folder for the management of information messages as a result of the operation performed with user data, <br>
+&nbsp;&nbsp;5.To create the `DependecyResolvers` folder instance,<br>
+&nbsp;&nbsp;6.The `ValidationRules` folder was created for the management of validation rules.<br>
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Abstract`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [IAuthService](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/Business/Abstract/IAuthService.cs)<br>
@@ -107,15 +107,15 @@ Altı alt klasörden oluşur.<br>
 
 
 ### :file_folder: Core Layer
-Tüm projelerde kullanılacak ortak kodların bulunduğu evrensel bir katmandır.<br>
-Yedi alt klasörden oluşmaktadır.<br>
-&nbsp;&nbsp;1.`Aspects` klasörü,<br>
-&nbsp;&nbsp;2.`CrossCuttingConcerns` klasörü,<br>
-&nbsp;&nbsp;3.`DataAccess` klasörü,<br>
-&nbsp;&nbsp;4.`Entities` klasörü, <br>
-&nbsp;&nbsp;5.`DependecyResolvers` klasörü,<br>
-&nbsp;&nbsp;6.`Extensions` klasörü,<br>
-&nbsp;&nbsp;7.`Utilities` klasörü,<br>
+It is a universal layer with common codes to be used in all projects.<br>
+It consists of seven sub-folders.<br>
+&nbsp;&nbsp;1.`Aspects` folder,<br>
+&nbsp;&nbsp;2.`CrossCuttingConcerns` folder,<br>
+&nbsp;&nbsp;3.`DataAccess` folder,<br>
+&nbsp;&nbsp;4.`Entities` folder, <br>
+&nbsp;&nbsp;5.`DependecyResolvers` folder,<br>
+&nbsp;&nbsp;6.`Extensions` folder,<br>
+&nbsp;&nbsp;7.`Utilities` folder,<br>
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder:`Aspect`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:open_file_folder: `Autofac`<br>
@@ -192,7 +192,7 @@ Yedi alt klasörden oluşmaktadır.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [PaymentsController](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/WebAPI/Controllers/PaymentsController.cs)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:clipboard: [UsersController](https://github.com/cihanicelliler/ReCapProject-Backend/blob/master/WebAPI/Controllers/UsersController.cs)<br>
 
-Zaman ayırdığınız için teşekkür ederim. Benimle aşağıdaki hesaplarımdan iletişime geçebilirsiniz. <br>
+Thank you for taking your time to read. You can contact me from my accounts below.<br>
 <br>
 
 <a href="https://github.com/cihanicelliler" target="_blank">
