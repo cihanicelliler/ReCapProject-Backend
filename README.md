@@ -32,7 +32,7 @@ It consists of three sub-folders. <br>
 
 ### :file_folder: DataAccess Layer
 Database is the data access layer established to perform CRUD operations.<br>
-İki alt klasörden oluşmaktadır.<br>
+It consists of two subfolders.<br>
 &nbsp;&nbsp;1.`Abstract` folder to hold abstract objects,<br>
 &nbsp;&nbsp;2.`Concrete` folder to hold concrete objects. <br>
 <br><br>
